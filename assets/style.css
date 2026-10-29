@@ -1,0 +1,223 @@
+/* Couchpad site: the app's etched-glass look on an aluminium frame, in a light and a dark variant. */
+
+:root {
+  color-scheme: light dark;
+  --frame-top: #cfcfd3;
+  --frame-bottom: #a7a7ae;
+  --glass-top: #f5f4f0;
+  --glass-bottom: #eae9e4;
+  --glass-edge: rgba(255, 255, 255, 0.95);
+  --glass-inner: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.3);
+  --ink: rgba(0, 0, 0, 0.8);
+  --ink-soft: rgba(0, 0, 0, 0.62);
+  --etch: rgba(0, 0, 0, 0.5);
+  --etch-light: rgba(255, 255, 255, 0.95);
+  --etch-dark: rgba(0, 0, 0, 0.22);
+  --rule-dark: rgba(0, 0, 0, 0.13);
+  --rule-light: rgba(255, 255, 255, 0.95);
+  --pill: rgba(0, 0, 0, 0.055);
+  --pill-edge: rgba(0, 0, 0, 0.14);
+  --raised-top: #faf9f6;
+  --raised-bottom: #e5e4df;
+  --raised-edge: rgba(0, 0, 0, 0.2);
+  --link: #6e5206;
+  --accent: #dba72b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --frame-top: #3a3a3e;
+    --frame-bottom: #1d1d20;
+    --glass-top: #313134;
+    --glass-bottom: #262629;
+    --glass-edge: rgba(255, 255, 255, 0.14);
+    --glass-inner: rgba(0, 0, 0, 0.5);
+    --shadow: rgba(0, 0, 0, 0.6);
+    --ink: rgba(255, 255, 255, 0.9);
+    --ink-soft: rgba(255, 255, 255, 0.68);
+    --etch: rgba(255, 255, 255, 0.5);
+    --etch-light: rgba(0, 0, 0, 0.6);
+    --etch-dark: rgba(255, 255, 255, 0.12);
+    --rule-dark: rgba(0, 0, 0, 0.55);
+    --rule-light: rgba(255, 255, 255, 0.1);
+    --pill: rgba(0, 0, 0, 0.22);
+    --pill-edge: rgba(255, 255, 255, 0.1);
+    --raised-top: #5d5d61;
+    --raised-bottom: #424246;
+    --raised-edge: rgba(0, 0, 0, 0.55);
+    --link: #f0c658;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+  background: linear-gradient(var(--frame-top), var(--frame-bottom)) fixed;
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* The glass pad that holds the page. */
+.pad {
+  max-width: 980px;
+  margin: 0 auto;
+  border-radius: 38px;
+  background: linear-gradient(var(--glass-top), var(--glass-bottom));
+  box-shadow:
+    inset 0 0 0 1px var(--glass-edge),
+    inset 0 0 0 3px var(--glass-inner),
+    0 24px 60px -10px var(--shadow);
+  overflow: hidden;
+}
+
+.inner { padding-left: clamp(20px, 6vw, 64px); padding-right: clamp(20px, 6vw, 64px); }
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+.brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-weight: 650; font-size: 19px; }
+.brand img { width: 36px; height: 36px; border-radius: 9px; box-shadow: 0 2px 6px var(--shadow); }
+.site-header nav { display: flex; gap: 22px; }
+.site-header nav a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
+
+/* Engraved lines, built like the app's divider: a faint dark line with a light one right under it. */
+.rule { height: 2px; border: 0; margin: 0; background: linear-gradient(var(--rule-dark) 1px, var(--rule-light) 1px); }
+
+/* Etched headings and labels. */
+.etched {
+  color: var(--etch);
+  text-shadow: 0 1px 0 var(--etch-light), 0 -0.5px 0.4px var(--etch-dark);
+}
+
+h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(34px, 6vw, 56px); font-weight: 700; }
+h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 700; }
+h3 { font-size: 20px; font-weight: 650; }
+p { margin: 0 0 1em; }
+.lead { font-size: clamp(18px, 2.4vw, 22px); color: var(--ink-soft); max-width: 36em; margin-left: auto; margin-right: auto; }
+
+/* Hero */
+.hero { text-align: center; padding-top: 36px; padding-bottom: 64px; }
+.hero-art { position: relative; width: min(440px, 100%); aspect-ratio: 1; margin: 0 auto 8px; display: grid; place-items: center; }
+.hero-art .ring { position: absolute; border-radius: 50%; border: 1px solid var(--rule-dark); box-shadow: 0 1px 0 var(--rule-light); }
+.hero-art .ring:nth-child(1) { width: 62%; aspect-ratio: 1; opacity: 0.95; }
+.hero-art .ring:nth-child(2) { width: 82%; aspect-ratio: 1; opacity: 0.6; }
+.hero-art .ring:nth-child(3) { width: 102%; aspect-ratio: 1; opacity: 0.3; }
+.hero-art img { position: relative; width: 38%; border-radius: 22.5%; box-shadow: 0 18px 36px -8px var(--shadow), 0 2px 6px var(--shadow); }
+.hero h1 { max-width: 14em; margin: 0 auto 18px; }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; margin-top: 30px; }
+
+/* A button standing proud of the glass, like the Connect button in the app. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 1px solid var(--raised-edge);
+  background: linear-gradient(var(--raised-top), var(--raised-bottom));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 3px 6px var(--shadow);
+  color: var(--ink);
+  font-weight: 650;
+  font-size: 17px;
+  text-decoration: none;
+}
+.button:hover { filter: brightness(1.03); }
+.button:active { box-shadow: inset 0 2px 5px var(--shadow); background: var(--pill); }
+.note { color: var(--ink-soft); font-size: 15px; }
+.fine { color: var(--ink-soft); font-size: 14px; margin-top: 14px; }
+
+/* Sections */
+section { padding-top: 56px; padding-bottom: 56px; }
+.section-head { margin-bottom: 28px; }
+.section-head p { color: var(--ink-soft); margin-top: 8px; max-width: 38em; }
+
+.cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card {
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--pill);
+  border: 1px solid var(--pill-edge);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 var(--rule-light);
+}
+.card h3 { margin-bottom: 10px; }
+.card p, .card li { color: var(--ink-soft); font-size: 16px; }
+.card ul { margin: 0; padding-left: 1.1em; }
+.card li { margin-bottom: 4px; }
+
+.steps { counter-reset: step; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); padding: 0; margin: 0; list-style: none; }
+.steps li { counter-increment: step; padding: 4px 0; }
+.steps li::before {
+  content: counter(step);
+  display: grid; place-items: center;
+  width: 44px; height: 44px; margin-bottom: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--raised-edge);
+  background: linear-gradient(var(--raised-top), var(--raised-bottom));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 2px 4px var(--shadow);
+  font-weight: 700;
+}
+.steps h3 { margin-bottom: 6px; }
+.steps p { color: var(--ink-soft); font-size: 16px; }
+
+/* Text pages (support, privacy) */
+.page { padding-top: 24px; padding-bottom: 72px; max-width: 760px; margin: 0 auto; }
+.page h1 { font-size: clamp(30px, 5vw, 44px); margin-bottom: 14px; }
+.page h2 { font-size: 24px; margin: 40px 0 12px; }
+.page ul, .page ol { padding-left: 1.3em; }
+.page li { margin-bottom: 6px; }
+.meta { color: var(--ink-soft); font-size: 15px; }
+
+details { border-radius: 18px; background: var(--pill); border: 1px solid var(--pill-edge); padding: 4px 20px; margin-bottom: 12px; }
+summary { cursor: pointer; font-weight: 600; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--ink-soft); font-weight: 500; }
+details[open] summary::after { content: "–"; }
+details > :not(summary) { color: var(--ink-soft); }
+details p:last-child, details ul:last-child, details ol:last-child { margin-bottom: 16px; }
+kbd { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6px; border-radius: 6px; background: var(--pill); border: 1px solid var(--pill-edge); }
+
+/* Footer */
+.site-footer { padding-top: 28px; padding-bottom: 36px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; color: var(--ink-soft); font-size: 14px; }
+.site-footer nav { display: flex; gap: 20px; }
+.site-footer a { color: var(--ink-soft); }
+
+@media (max-width: 560px) {
+  body { padding: 12px 10px 28px; }
+  .pad { border-radius: 28px; }
+  .site-header nav { gap: 16px; font-size: 16px; }
+  section { padding-top: 40px; padding-bottom: 40px; }
+}
+
+/* Screenshots */
+.shots { display: grid; gap: 28px 24px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; }
+.shots figure { margin: 0; }
+.shots .wide { grid-column: 1 / -1; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 26px; box-shadow: 0 18px 40px -12px var(--shadow), 0 2px 6px var(--shadow); }
+.shots .mac img { border-radius: 22px; }
+.shots figure:not(.wide) img { max-width: 340px; margin: 0 auto; }
+.shots .mac img { max-width: 100%; }
+.shots figcaption { margin-top: 14px; text-align: center; color: var(--ink-soft); font-size: 15px; }
+@media (min-width: 820px) {
+  .shots { grid-template-columns: 1fr 1fr 1fr; }
+  /* The Mac menu is the odd one out in shape, so it sits level with the middle of the phone screens. */
+  .shots .mac { align-self: center; }
+}
