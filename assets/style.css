@@ -23,6 +23,7 @@
   --raised-edge: rgba(0, 0, 0, 0.2);
   --link: #6e5206;
   --accent: #dba72b;
+  --wordmark: rgba(0, 0, 0, 0.85);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,7 +48,16 @@
     --raised-bottom: #424246;
     --raised-edge: rgba(0, 0, 0, 0.55);
     --link: #f0c658;
+    --wordmark: #f0c658;
   }
+}
+
+/* The wordmark's typeface: Fredoka, under the SIL Open Font Licence (assets/fonts/OFL.txt), served from this site. */
+@font-face {
+  font-family: "Fredoka";
+  src: url("/assets/fonts/Fredoka.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
 }
 
 * { box-sizing: border-box; }
@@ -83,21 +93,6 @@ a:hover { text-decoration-thickness: 2px; }
 
 .inner { padding-left: clamp(20px, 6vw, 64px); padding-right: clamp(20px, 6vw, 64px); }
 
-/* Header */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-top: 28px;
-  padding-bottom: 28px;
-}
-.brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-weight: 650; font-size: 19px; }
-.brand img { width: 36px; height: 36px; border-radius: 9px; box-shadow: 0 2px 6px var(--shadow); }
-.site-header nav { display: flex; gap: 22px; }
-.site-header nav a { color: var(--ink-soft); text-decoration: none; font-weight: 500; }
-.site-header nav a:hover, .site-header nav a[aria-current="page"] { color: var(--ink); }
-
 /* Engraved lines, built like the app's divider: a faint dark line with a light one right under it. */
 .rule { height: 2px; border: 0; margin: 0; background: linear-gradient(var(--rule-dark) 1px, var(--rule-light) 1px); }
 
@@ -117,6 +112,15 @@ p { margin: 0 0 1em; }
 /* Hero */
 .hero { text-align: center; padding-top: 56px; padding-bottom: 64px; }
 .hero h1 { max-width: 14em; margin: 0 auto 18px; }
+
+/* The app icon and the wordmark, at the top of the home page. */
+.hero-brand { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 36px; }
+.hero-brand img { width: 120px; height: 120px; border-radius: 22.5%; box-shadow: 0 18px 36px -8px var(--shadow), 0 2px 6px var(--shadow); }
+.wordmark {
+  color: var(--wordmark);
+  font-family: "Fredoka", ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600; font-size: clamp(40px, 9vw, 58px); line-height: 1; letter-spacing: -0.01em;
+}
 .actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; margin-top: 30px; }
 
 /* A button standing proud of the glass, like the Connect button in the app. */
@@ -173,7 +177,7 @@ section { padding-top: 56px; padding-bottom: 56px; }
 .steps p { color: var(--ink-soft); font-size: 16px; }
 
 /* Text pages (support, privacy) */
-.page { padding-top: 24px; padding-bottom: 72px; max-width: 760px; margin: 0 auto; }
+.page { padding-top: 48px; padding-bottom: 72px; max-width: 760px; margin: 0 auto; }
 .page h1 { font-size: clamp(30px, 5vw, 44px); margin-bottom: 14px; }
 .page h2 { font-size: 24px; margin: 40px 0 12px; }
 .page ul, .page ol { padding-left: 1.3em; }
@@ -197,7 +201,6 @@ kbd { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6p
 @media (max-width: 560px) {
   body { padding: 12px 10px 28px; }
   .pad { border-radius: 28px; }
-  .site-header nav { gap: 16px; font-size: 16px; }
   section { padding-top: 40px; padding-bottom: 40px; }
 }
 

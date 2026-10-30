@@ -7,7 +7,7 @@ index.html          landing page
 support/index.html  help and FAQ
 privacy/index.html  privacy policy
 404.html            not-found page
-assets/             stylesheet and icons
+assets/             stylesheet, icons and the Fredoka font for the wordmark (licence in assets/fonts/OFL.txt)
 CNAME               the custom domain (couchpad.app)
 ```
 
