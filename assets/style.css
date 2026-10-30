@@ -214,7 +214,7 @@ kbd { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6p
 .shots .mac img { max-width: 100%; }
 .shots figcaption { margin-top: 14px; text-align: center; color: var(--ink-soft); font-size: 15px; }
 @media (min-width: 820px) {
-  .shots { grid-template-columns: 1fr 1fr 1fr; }
+  .shots { grid-template-columns: repeat(4, 1fr); }
   /* The Mac menu is the odd one out in shape, so it sits level with the middle of the phone screens. */
   .shots .mac { align-self: center; }
 }
