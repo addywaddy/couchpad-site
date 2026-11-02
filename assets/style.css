@@ -163,10 +163,11 @@ section { padding-top: 56px; padding-bottom: 56px; }
 
 .steps { counter-reset: step; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); padding: 0; margin: 0; list-style: none; }
 .steps li { counter-increment: step; padding: 4px 0; }
-.steps li::before {
+.steps h3 { display: flex; align-items: center; gap: 12px }
+.steps h3::before {
   content: counter(step);
   display: grid; place-items: center;
-  width: 44px; height: 44px; margin-bottom: 14px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   border: 1px solid var(--raised-edge);
   background: linear-gradient(var(--raised-top), var(--raised-bottom));
