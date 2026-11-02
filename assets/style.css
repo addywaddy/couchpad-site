@@ -161,7 +161,7 @@ section { padding-top: 56px; padding-bottom: 56px; }
 .card ul { margin: 0; padding-left: 1.1em; }
 .card li { margin-bottom: 4px; }
 
-.steps { counter-reset: step; display: grid; gap: 40px; padding: 0; margin: 0; list-style: none; }
+.steps { counter-reset: step; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); padding: 0; margin: 0; list-style: none; }
 .steps li { counter-increment: step; padding: 4px 0; }
 .steps h3 { display: flex; align-items: center; gap: 12px }
 .steps h3::before {
@@ -180,8 +180,16 @@ section { padding-top: 56px; padding-bottom: 56px; }
 .step-shots img { display: block; width: 100%; height: auto; border-radius: 18px; box-shadow: 0 10px 24px -10px var(--shadow), 0 2px 5px var(--shadow); }
 /* Phone screenshots are tall; keep them narrow. */
 .step-shots img[height="1425"] { max-width: 260px; justify-self: center; }
+/* The setup guide lays each step out as a row: its words, then its screenshots. */
+.page.guide { max-width: 980px; }
+.guide .steps { grid-template-columns: 1fr; gap: 44px; padding: 0; }
+.guide .steps li { margin-bottom: 0; }
+.guide .steps + .fine { margin-top: 44px; }
+/* The same etched line as the page's <hr>s, between steps (an <hr> isn't allowed inside a list). */
+.guide .steps li + li { position: relative; padding-top: 44px; }
+.guide .steps li + li::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(var(--rule-dark) 1px, var(--rule-light) 1px); }
 @media (min-width: 760px) {
-  .steps li { display: grid; grid-template-columns: minmax(200px, 1fr) 2fr; gap: 32px; align-items: center; }
+  .guide .steps li { display: grid; grid-template-columns: minmax(200px, 1fr) 2fr; gap: 32px; align-items: center; }
   .step-shots { grid-template-columns: 1fr 1fr; }
 }
 
