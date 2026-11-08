@@ -3,117 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Couchpad support</title>
-<meta name="description" content="Help with pairing, Wi-Fi, permissions and brightness in Couchpad.">
-<link rel="canonical" href="https://couchpad.app/support/">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Couchpad">
-<meta property="og:title" content="Couchpad support">
-<meta property="og:description" content="Help with pairing, Wi-Fi, permissions and brightness in Couchpad.">
-<meta property="og:url" content="https://couchpad.app/support/">
-<meta property="og:image" content="https://couchpad.app/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/assets/style.css">
+<title>Couchpad Support</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://couchpad.app/">
+<meta http-equiv="refresh" content="0; url=/#support">
+<script>location.replace("/" + (location.hash || "#support"));</script>
 </head>
 <body>
-<div class="pad">
-<main class="inner page">
-  <h1 class="etched">Support</h1>
-  <p class="lead" style="margin-left:0">Quick answers to the most common questions. If yours isn't here, write to <a href="mailto:support@couchpad.app">support@couchpad.app</a>.</p>
-
-  <p>New here? Start with the <a href="/setup/">setup guide</a>.</p>
-
-  <h2 class="etched" id="connecting">Connecting</h2>
-  <details>
-    <summary>My iPhone can't find my Mac</summary>
-    <ul>
-      <li>Check that both are on the <strong>same Wi-Fi network</strong>. Guest networks, some office networks and some hotel or student Wi-Fi stop devices seeing each other.</li>
-      <li>Check the Couchpad sofa icon is in your Mac's menu bar. If not, open Couchpad from Applications.</li>
-      <li>On your iPhone, open Settings &rarr; Privacy &amp; Security &rarr; Local Network and make sure Couchpad is on.</li>
-      <li>If you use a VPN on either device, try turning it off.</li>
-      <li>If your Mac's firewall is on, allow incoming connections for Couchpad in System Settings &rarr; Network &rarr; Firewall.</li>
-    </ul>
-  </details>
-  <details>
-    <summary>Where do I find the PIN?</summary>
-    <p>Click the Couchpad icon in your Mac's menu bar. The PIN is shown at the top. Enter it in the iPhone app and choose your Mac from the list.</p>
-  </details>
-  <details>
-    <summary>It says "Too many wrong PINs"</summary>
-    <p>To stop anyone guessing your PIN, five wrong attempts in a row pause pairing for 30 seconds. Each further batch of five doubles the wait, up to an hour. After 20 wrong guesses in total, the Mac chooses a new PIN. Wait for the pause to end and enter the PIN from the Couchpad menu. Choose <em>New PIN</em> there at any time to change it.</p>
-  </details>
-  <details>
-    <summary>It worked yesterday and now it won't connect</summary>
-    <p>Your Mac's PIN may have changed, or the Mac may be asleep or on a different network. Check the PIN in the Couchpad menu, then open Settings in the iPhone app and enter it again.</p>
-  </details>
-
-  <h2 class="etched">Using it</h2>
-  <details id="accessibility">
-    <summary>The pointer doesn't move, or clicks and keys do nothing</summary>
-    <p>Couchpad needs the Accessibility permission to act as a mouse and keyboard. On your Mac open System Settings &rarr; Privacy &amp; Security &rarr; Accessibility and switch Couchpad on. The Couchpad menu has a button that takes you there. After you allow it, the iPhone app updates within a few seconds.</p>
-  </details>
-  <details>
-    <summary>How do I type on my Mac?</summary>
-    <p>Tap the keyboard icon in the bar along the bottom of the app. Whatever you type appears on your Mac as you type, in the app that's in front, so click the search box or text field on your Mac first (with the trackpad). Drag along the space bar to move the cursor; the Mac's cursor follows. The Return key presses Return on the Mac, for example to submit a search.</p>
-  </details>
-  <details>
-    <summary>The text I type shows large on my Mac. Can I turn that off?</summary>
-    <p>Yes. In the iPhone app go to Settings &rarr; Controls and switch off <em>Typing preview on Mac</em>. The preview is also hidden automatically while a password field is selected.</p>
-  </details>
-  <details>
-    <summary>How do I get back from the trackpad or typing screen?</summary>
-    <p>Tap any icon in the bar along the bottom, or tap the trackpad with three fingers to go back to the remote.</p>
-  </details>
-  <details>
-    <summary>What is the pointer trail on my Mac's screen?</summary>
-    <p>While you use the trackpad, your Mac can show a thin fading trail behind the pointer, and a soft ring that pings outwards for a couple of seconds where it stops. Both help you find the pointer from across the room. Switch it off in Settings &rarr; Controls with <em>Pointer trail on Mac</em>, or choose its colour with the <em>Pointer colour</em> strip: drag all the way left for white, or along the rainbow for a colour.</p>
-  </details>
-  <details>
-    <summary>How do I use it in a dark room?</summary>
-    <p>In Settings &rarr; Appearance turn on Dark mode. Then use the <em>Brightness</em> strip to dim the app further than the iPhone's own screen allows. Then use the <em>Colour</em> strip: drag it all the way left for white, or along the rainbow for a colour. Warm colours such as orange and red are the gentlest on your eyes in the dark.</p>
-  </details>
-  <details>
-    <summary>How do I drag a window?</summary>
-    <p>Put the pointer on the window's title bar, then hold one finger still on the trackpad until you feel a tap. Slide your finger to move the window and lift it to let go.</p>
-  </details>
-  <details>
-    <summary>The brightness slider is missing or does nothing</summary>
-    <p>macOS only lets apps change brightness on some screens, such as the built-in display and Apple displays. Many other monitors can only be adjusted with their own buttons or on-screen menu. The slider appears only for screens Couchpad can control.</p>
-  </details>
-  <details>
-    <summary>How does the fullscreen switch work?</summary>
-    <p>In the Apple TV app it sends <kbd>fn</kbd> + <kbd>F</kbd>, the Mac's fullscreen shortcut. In a browser it presses <kbd>F</kbd> to make the video fullscreen and <kbd>Esc</kbd> to leave it, which is what video players on streaming sites listen for. The switch follows the window's real state, including when you change it on the Mac.</p>
-  </details>
-  <details>
-    <summary>Does it work away from home?</summary>
-    <p>Couchpad works over a local Wi-Fi network only. Both devices have to be on the same network. It doesn't connect over the internet, which is also why nothing leaves your network.</p>
-  </details>
-  <details>
-    <summary>Can I try it without a Mac?</summary>
-    <p>Yes. On the iPhone app's settings page (Connection tab), choose <em>Try without a Mac</em>. Every control works on sample data and nothing is sent anywhere.</p>
-  </details>
-
-  <h2 class="etched">Removing Couchpad</h2>
-  <details>
-    <summary>How do I uninstall it?</summary>
-    <ol>
-      <li>Choose Quit Couchpad from the menu bar icon.</li>
-      <li>Drag Couchpad from Applications to the Bin.</li>
-      <li>Optionally remove it from System Settings &rarr; Privacy &amp; Security &rarr; Accessibility.</li>
-      <li>Delete the app from your iPhone as usual.</li>
-    </ol>
-  </details>
-
-  <h2 class="etched">Still stuck?</h2>
-  <p>Write to <a href="mailto:support@couchpad.app">support@couchpad.app</a> and tell us your macOS and iOS versions and what you see.</p>
-</main>
-<hr class="rule">
-<footer class="inner site-footer">
-  <span>&copy; 2026 Couchpad. Not affiliated with Apple Inc.</span>
-  <nav aria-label="Footer"><a href="/">Home</a><a href="/setup/">Setup</a><a href="/support/">Support</a><a href="/privacy/">Privacy</a></nav>
-</footer>
-</div>
+<p>This page has moved to <a href="/#support">couchpad.app</a>.</p>
 </body>
 </html>

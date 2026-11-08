@@ -3,9 +3,8 @@
 The website for Couchpad: plain HTML and CSS, no build step and no dependencies.
 
 ```
-index.html          landing page
-support/index.html  help and FAQ
-privacy/index.html  privacy policy
+index.html          the whole site: home, setup, support and privacy sections
+setup/, support/, privacy/  redirect stubs to the sections of index.html (old links, in-app help anchors)
 404.html            not-found page
 assets/             stylesheet, icons and the Fredoka font for the wordmark (licence in assets/fonts/OFL.txt)
 CNAME               the custom domain (couchpad.app)
