@@ -19,7 +19,6 @@ Preview locally: `python3 -m http.server` in this folder, then open http://local
   writes one to `dist/`). Change the link in `index.html` if the repository has another name.
 - `support@couchpad.app` appears on the support and privacy pages. Set up a mailbox or forwarding for it, for example
   with Cloudflare Email Routing, or change the address.
-- Add the App Store link next to "coming soon" in `index.html` once the iPhone app is live.
 
 ## Hosting on GitHub Pages
 

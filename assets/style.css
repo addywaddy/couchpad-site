@@ -144,18 +144,29 @@ p { margin: 0 0 1em; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  border: 1px solid var(--raised-edge);
+  height: 52px;
+  padding: 0 20px 0 16px;
+  border-radius: 10px;
+  border: 1px solid #a6a6a6; /* the badge's outline grey */
   background: linear-gradient(var(--raised-top), var(--raised-bottom));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 3px 6px var(--shadow);
   color: var(--ink);
   font-weight: 650;
   font-size: 17px;
   text-decoration: none;
 }
+/* Apple's official badge, used unmodified. */
+.app-store { display: inline-flex; line-height: 0; }
+.app-store img { display: block; height: 52px; width: auto; }
+/* In a setup step, keep the badge at its own size, not the full-width screenshot style. */
+.step-shots .app-store { justify-self: start; }
+.step-shots .app-store img { width: auto; height: 52px; border-radius: 0; box-shadow: none; }
+/* Two lines of text, like the App Store badge beside it. */
+.button svg { width: 26px; height: 26px; flex: none; }
+.button-label { display: flex; flex-direction: column; line-height: 1.05; text-align: left; }
+.button-label small { font-size: 11px; font-weight: 500; letter-spacing: 0.01em; }
+.button-label strong { font-size: 21px; font-weight: 650; }
 .button:hover { filter: brightness(1.03); }
-.button:active { box-shadow: inset 0 2px 5px var(--shadow); background: var(--pill); }
+.button:active { background: var(--pill); }
 .note { color: var(--ink-soft); font-size: 15px; }
 .fine { color: var(--ink-soft); font-size: 14px; margin-top: 14px; }
 
@@ -240,7 +251,7 @@ kbd { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; padding: 1px 6p
 
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 10; height: 52px; display: flex; align-items: center; background: var(--glass-top); box-shadow: 0 1px 0 var(--rule-dark), 0 2px 0 var(--rule-light); font-size: 15px; }
-.site-header nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.site-header nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 36px; width: 100%; }
 .site-header a { color: var(--ink-soft); text-decoration: none; }
 .site-header a:hover, .site-header a[aria-current] { color: var(--ink); }
 .site-header a[aria-current] { font-weight: 600; }
